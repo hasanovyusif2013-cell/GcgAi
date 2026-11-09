@@ -65,4 +65,3 @@ if st.button("Müzakirəni Başlat və Qərar Ver"):
 
             except Exception as e:
                 st.error(f"Xəta baş verdi: {e}")
- 
