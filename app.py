@@ -14,7 +14,7 @@ with st.sidebar:
     grok_key = st.text_input("Grok (xAI) API Key", type="password")
     st.info("Modelləri işə salmaq üçün açarlarını bura daxil et.")
 
-user_prompt = st.text_area("Sualınızı və ya tapşırığınızı daxil edin:", placeholder="Məsələn: Roblox skriptində optimizasiya...")
+user_prompt = st.text_area("Sualınızı və ya tapşırığınızı daxil edin:", placeholder="Məsələn: Roblox üçün animasiya...")
 
 if st.button("Müzakirəni Başlat və Qərar Ver"):
     if not gemini_key or not grok_key:
@@ -26,7 +26,7 @@ if st.button("Müzakirəni Başlat və Qərar Ver"):
             try:
                 # 1. Gemini-nin cavabı
                 genai.configure(api_key=gemini_key)
-                gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+                gemini_model = genai.GenerativeModel('gemini-pro')
                 gemini_response = gemini_model.generate_content(user_prompt)
                 gemini_text = gemini_response.text
 
@@ -65,3 +65,4 @@ if st.button("Müzakirəni Başlat və Qərar Ver"):
 
             except Exception as e:
                 st.error(f"Xəta baş verdi: {e}")
+ 
