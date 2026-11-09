@@ -26,7 +26,7 @@ if st.button("Müzakirəni Başlat və Qərar Ver"):
             try:
                 # 1. Gemini-nin cavabı
                 genai.configure(api_key=gemini_key)
-                gemini_model = genai.GenerativeModel('gemini-pro')
+                gemini_model = genai.GenerativeModel('gemini-1.5-flash')
                 gemini_response = gemini_model.generate_content(user_prompt)
                 gemini_text = gemini_response.text
 
